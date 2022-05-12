@@ -7,10 +7,10 @@ import {
   Image,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import Meal from "../models/meal";
-import { RootStackParamList } from "../screens/navigation/RootStackParams";
+import Meal from "../../models/meal";
+import { RootStackParamList } from "../../screens/navigation/RootStackParams";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import MealDetails from "./MealDetails";
+import MealDetails from "../MealDetails";
 
 interface MealItemProps {
   meal: Meal;
@@ -22,7 +22,7 @@ const MealItem = ({ meal }: MealItemProps) => {
   const navigation = useNavigation<NavigationProps>();
 
   return (
-    <View>
+    <View style={styles.mealItem}>
       <Pressable
         onPress={() => {
           navigation.navigate("MealDetail", {
